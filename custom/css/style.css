@@ -1,0 +1,38 @@
+﻿/*-------------MASTERPAGE-----------------*/
+#topHeader {
+    background-color: ghostwhite;
+    border-bottom: 1px solid silver;
+}
+
+#topHeader nav {
+    padding: 0;
+}
+
+#topHeader a {
+    color: #2C3E50;
+    font-weight: 600;
+    font-size: 0.9rem;
+}
+
+#bottomHeader {
+    background-color: #2C3E50;
+}
+
+.navbar-brand p {
+    font-size: 25px;
+    margin-bottom: 0;
+}
+
+#fullFooter {
+    background-color: #202E3B;
+}
+
+#topFooter h5 {
+    color: white;
+}
+
+#bottomFooter {
+    background-color: ghostwhite;
+    border-top: 1px solid silver;
+}
+/*-----------------aboutus-----------------*/
