@@ -26,103 +26,113 @@
 
                         <div class="row">
                             <div class="col-6">
-                                Full Name
+                                <label>Full Name</label>
+                                <div class="form-group">
+                                    <asp:TextBox CssClass="form-control" ID="name_input" type="text" runat="server"></asp:TextBox>
+                                    <asp:RequiredFieldValidator CssClass="text-danger" runat="server" id="name_validator" controltovalidate="name_input" errormessage="*Field required" />
+                                </div>
                             </div>
                             <div class="col-6">
-                                Date of Birth
+                                <label>Date of Birth</label>
+                                <div class="form-group">
+                                    <asp:TextBox CssClass="form-control" ID="birthdate_input" type="date" runat="server"></asp:TextBox>
+                                    <asp:RequiredFieldValidator CssClass="text-danger" runat="server" id="dob_validator" controltovalidate="birthdate_input" errormessage="*Field required" />
+                                </div>
                             </div>
                         </div>
 
                         <div class="row">
-                            <div class="col-6 form-group">
-                                <asp:TextBox CssClass="form-control" ID="name_input" type="text" runat="server"></asp:TextBox>
-                            </div>
-                            <div class="col-6 form-group">
-                                <asp:TextBox CssClass="form-control" ID="birthdate_input" type="date" runat="server"></asp:TextBox>
-                            </div>
-                        </div>
-
-                        <div class="row">
                             <div class="col-6">
-                                Contact Number
+                                <label>Contact Number</label>
+                                <div class="form-group">
+                                    <asp:TextBox CssClass="form-control" ID="phone_input" type="tel" runat="server"></asp:TextBox>
+                                    <asp:RequiredFieldValidator CssClass="text-danger" runat="server" id="phone_validator" controltovalidate="phone_input" errormessage="*Field required" />
+                                </div>
                             </div>
                             <div class="col-6">
-                                Email Address
-                            </div>
-                        </div>
-
-                        <div class="row">
-                            <div class="col-6 form-group">
-                                <asp:TextBox CssClass="form-control" ID="phone_input" type="tel" runat="server"></asp:TextBox>
-                            </div>
-                            <div class="col-6 form-group">
-                                <asp:TextBox CssClass="form-control" ID="email_input" type="email" runat="server"></asp:TextBox>
+                                <label>E-mail Address</label>
+                                <div class="form-group">
+                                    <asp:TextBox CssClass="form-control" ID="email_input" type="email" runat="server"></asp:TextBox>
+                                    <asp:RequiredFieldValidator CssClass="text-danger" runat="server" id="email_validator" controltovalidate="email_input" errormessage="*Field required" />
+                                </div>
                             </div>
                         </div>
 
                         <div class="row">
                             <div class="col-4">
-                                State
+                                <label>State</label>
+                                <div class="form-group">
+                                    <asp:TextBox CssClass="form-control" ID="state_input" type="text" runat="server"></asp:TextBox>
+                                    <asp:RequiredFieldValidator CssClass="text-danger" runat="server" id="state_validator" controltovalidate="state_input" errormessage="*Field required" />
+                                </div>
                             </div>
                             <div class="col-4">
-                                City
+                                <label>City</label>
+                                <div class="form-group">
+                                    <asp:TextBox CssClass="form-control" ID="city_input" type="text" runat="server"></asp:TextBox>
+                                    <asp:RequiredFieldValidator CssClass="text-danger" runat="server" id="city_validator" controltovalidate="city_input" errormessage="*Field required" />
+                                </div>
                             </div>
                             <div class="col-4">
-                                Post Number
-                            </div>
-                        </div>
-
-                        <div class="row">
-                            <div class="col-4 form-group">
-                                <asp:TextBox CssClass="form-control" ID="state_input" type="text" runat="server"></asp:TextBox>
-                            </div>
-                            <div class="col-4 form-group">
-                                <asp:TextBox CssClass="form-control" ID="city_input" type="text" runat="server"></asp:TextBox>
-                            </div>
-                            <div class="col-4 form-group">
-                                <asp:TextBox CssClass="form-control" ID="postnumber_input" type="text" runat="server"></asp:TextBox>
+                                <label>Postcode</label>
+                                <div class="form-group">
+                                    <asp:TextBox CssClass="form-control" ID="postnumber_input" type="text" runat="server"></asp:TextBox>
+                                    <asp:RequiredFieldValidator CssClass="text-danger" runat="server" id="postnumber_validator" controltovalidate="postnumber_input" errormessage="*Field required" />
+                                </div>
                             </div>
                         </div>
 
                         <div class="row">
                             <div class="col-12">
-                                Address
+                                <label>Address</label>
+                                <div class="form-group">
+                                    <asp:TextBox CssClass="form-control" ID="address_input" TextMode="MultiLine" type="text" Rows="3" runat="server"></asp:TextBox>
+                                    <asp:RequiredFieldValidator CssClass="text-danger" runat="server" id="address_validator" controltovalidate="address_input" errormessage="*Field required" />
+                                </div>
                             </div>
                         </div>
 
-                        <div class="row">
-                            <div class="col-12 form-group">
-                                <asp:TextBox CssClass="form-control" ID="address_input" TextMode="MultiLine" type="text" Rows="3" runat="server"></asp:TextBox>
-                            </div>
-                        </div>
 
                         <div class="row">
-                            <div class="col">
-                                <center><h5>Login Credentials</h5></center>
+                            <div class="col-12 d-flex justify-content-center">
+                                <h5>Login Credentials</h5>
                             </div>
                         </div>
 
                         <div class="row">
                             <div class="col-6">
-                                Username
+                                <label>Username</label>
+                                <div class="form-group">
+                                    <asp:TextBox CssClass="form-control" ID="username_input" type="text" runat="server"></asp:TextBox>
+                                    <asp:RequiredFieldValidator CssClass="text-danger" runat="server" id="username_validator" controltovalidate="username_input" errormessage="*Field required" />
+                                </div>
                             </div>
                             <div class="col-6">
-                                Password
+                                <label>Password</label>
+                                <div class="form-group">
+                                    <asp:TextBox CssClass="form-control" ID="password_input" type="password" runat="server"></asp:TextBox>
+                                    <asp:RequiredFieldValidator CssClass="text-danger" runat="server" id="password_validator" controltovalidate="password_input" errormessage="*Field required" />
+                                </div>
                             </div>
                         </div>
 
                         <div class="row">
-                            <div class="col-6 form-group">
-                                <asp:TextBox CssClass="form-control" ID="username_input" type="text" runat="server"></asp:TextBox>
+                            <div class="col-6">
+                                <label>Confirm Password</label>
+                                <div class="form-group">
+                                    <asp:TextBox CssClass="form-control" ID="confirm_password_input" type="password" runat="server"></asp:TextBox>
+                                    <asp:RequiredFieldValidator CssClass="text-danger" runat="server" id="confirm_password_validator" controltovalidate="confirm_password_input" errormessage="*Please confirm your password" />
+                                    <asp:CompareValidator ID="confirm_password_validator2" runat="server" ControlToValidate="confirm_password_input" CssClass="text-danger" ControlToCompare="password_input" ErrorMessage="*Password does not match" />
+                                </div>
                             </div>
-                            <div class="col-6 form-group">
-                                <asp:TextBox CssClass="form-control" ID="password_inpu" type="password" runat="server"></asp:TextBox>
+                            <div class="col-6">
+
                             </div>
                         </div>
 
                         <div class="row">
                             <div class="col-6 form-group mx-auto">
-                                <asp:Button CssClass="btn btn-block btn-primary" ID="sign_up_btn" runat="server" Text="Sign Up" />
+                                <asp:Button CssClass="btn btn-block btn-primary" ID="sign_up_btn" runat="server" Text="Sign Up" OnClick="sign_up_btn_Click" />
                             </div>
                         </div>
 

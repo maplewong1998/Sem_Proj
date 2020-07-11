@@ -13,5 +13,10 @@ namespace Sem_Proj
         {
 
         }
+
+        protected void login_btn_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
