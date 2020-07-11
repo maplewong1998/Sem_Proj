@@ -29,12 +29,14 @@
                                 Full Name
                                 <div class="form-group">
                                     <asp:TextBox CssClass="form-control" ID="name_input" type="text" runat="server"></asp:TextBox>
+                                    <asp:RequiredFieldValidator CssClass="text-danger" ID="RequiredFieldValidator1" ControlToValidate="name_input" runat="server" ErrorMessage="*Field required"></asp:RequiredFieldValidator>
                                 </div>
                             </div>
                             <div class="col-6">
                                 Date of Birth
                                 <div class="form-group">
                                     <asp:TextBox CssClass="form-control" ID="birthdate_input" type="date" runat="server"></asp:TextBox>
+                                    <asp:RequiredFieldValidator CssClass="text-danger" ID="RequiredFieldValidator2" ControlToValidate="birthdate_input" runat="server" ErrorMessage="*Field required"></asp:RequiredFieldValidator>
                                 </div>
                             </div>
                         </div>
@@ -44,12 +46,14 @@
                                 Contact Number
                                 <div class="form-group">
                                     <asp:TextBox CssClass="form-control" ID="phone_input" type="tel" runat="server"></asp:TextBox>
+                                    <asp:RequiredFieldValidator CssClass="text-danger" ID="RequiredFieldValidator3" ControlToValidate="phone_input" runat="server" ErrorMessage="*Field required"></asp:RequiredFieldValidator>
                                 </div>
                             </div>
                             <div class="col-6">
                                 Email Address
                                 <div class="form-group">
                                     <asp:TextBox CssClass="form-control" ID="email_input" type="email" runat="server"></asp:TextBox>
+                                    <asp:RequiredFieldValidator CssClass="text-danger" ID="RequiredFieldValidator4" ControlToValidate="email_input" runat="server" ErrorMessage="*Field required"></asp:RequiredFieldValidator>
                                 </div>
                             </div>
                         </div>
@@ -59,18 +63,21 @@
                                 State
                                 <div class="group">
                                     <asp:TextBox CssClass="form-control" ID="state_input" type="text" runat="server"></asp:TextBox>
+                                    <asp:RequiredFieldValidator CssClass="text-danger" ID="RequiredFieldValidator5" ControlToValidate="state_input" runat="server" ErrorMessage="*Field required"></asp:RequiredFieldValidator>
                                 </div>
                             </div>
                             <div class="col-4">
                                 City
                                 <div class="form-group">
                                     <asp:TextBox CssClass="form-control" ID="city_input" type="text" runat="server"></asp:TextBox>
+                                    <asp:RequiredFieldValidator CssClass="text-danger" ID="RequiredFieldValidator6" ControlToValidate="city_input" runat="server" ErrorMessage="*Field required"></asp:RequiredFieldValidator>
                                 </div>
                             </div>
                             <div class="col-4">
                                 Postcode
                                 <div class="form-group">
                                     <asp:TextBox CssClass="form-control" ID="postnumber_input" type="text" runat="server"></asp:TextBox>
+                                    <asp:RequiredFieldValidator CssClass="text-danger" ID="RequiredFieldValidator7" ControlToValidate="postnumber_input" runat="server" ErrorMessage="*Field required"></asp:RequiredFieldValidator>
                                 </div>
                             </div>
                         </div>
@@ -79,8 +86,9 @@
                             <div class="col-12">
                                 Address
                                 <div class="form-group">
-                                <asp:TextBox CssClass="form-control" ID="address_input" TextMode="MultiLine" type="text" Rows="3" runat="server"></asp:TextBox>
-                            </div>
+                                    <asp:TextBox CssClass="form-control" ID="address_input" TextMode="MultiLine" type="text" Rows="3" runat="server"></asp:TextBox>
+                                    <asp:RequiredFieldValidator CssClass="text-danger" ID="RequiredFieldValidator8" ControlToValidate="address_input" runat="server" ErrorMessage="*Field required"></asp:RequiredFieldValidator>
+                                </div>
                             </div>
                         </div>
 
@@ -95,12 +103,14 @@
                                 Username
                                 <div class="form-group">
                                     <asp:TextBox CssClass="form-control" ID="username_input" type="text" runat="server"></asp:TextBox>
+                                    <asp:RequiredFieldValidator CssClass="text-danger" ID="RequiredFieldValidator9" ControlToValidate="username_input" runat="server" ErrorMessage="*Field required"></asp:RequiredFieldValidator>
                                 </div>
                             </div>
                             <div class="col-6">
                                 Password
                                 <div class="form-group">
                                     <asp:TextBox CssClass="form-control" ID="password_input" type="password" runat="server"></asp:TextBox>
+                                    <asp:RequiredFieldValidator CssClass="text-danger" ID="RequiredFieldValidator10" ControlToValidate="password_input" runat="server" ErrorMessage="*Field required"></asp:RequiredFieldValidator>
                                 </div>
                             </div>
                         </div>

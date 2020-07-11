@@ -20,37 +20,41 @@ namespace Sem_Proj
 
         protected void sign_up_btn_Click(object sender, EventArgs e)
         {
-            try
+            Page.Validate();
+            if (Page.IsValid == true)
             {
-                SqlConnection conn_db = new SqlConnection(con);
-                if (conn_db.State == ConnectionState.Closed)
+                try
                 {
-                    conn_db.Open();
+                    SqlConnection conn_db = new SqlConnection(con);
+                    if (conn_db.State == ConnectionState.Closed)
+                    {
+                        conn_db.Open();
+                    }
+
+                    SqlCommand cmd = new SqlCommand("INSERT INTO member (full_name, dob, contact_no, email, state, city, postcode, full_address, member_id, password, account_status, account_privilege) " +
+                        "VALUES (@full_name, @dob, @contact_no, @email, @state, @city, @postcode, @full_address, @member_id, @password, @account_status, @account_privilege)", conn_db);
+
+                    cmd.Parameters.AddWithValue("@full_name", name_input.Text.Trim());
+                    cmd.Parameters.AddWithValue("@dob", birthdate_input.Text.Trim());
+                    cmd.Parameters.AddWithValue("@contact_no", phone_input.Text.Trim());
+                    cmd.Parameters.AddWithValue("@email", email_input.Text.Trim());
+                    cmd.Parameters.AddWithValue("@state", state_input.Text.Trim());
+                    cmd.Parameters.AddWithValue("@city", city_input.Text.Trim());
+                    cmd.Parameters.AddWithValue("@postcode", postnumber_input.Text.Trim());
+                    cmd.Parameters.AddWithValue("@full_address", address_input.Text.Trim());
+                    cmd.Parameters.AddWithValue("@member_id", username_input.Text.Trim());
+                    cmd.Parameters.AddWithValue("@password", password_input.Text.Trim());
+                    cmd.Parameters.AddWithValue("@account_status", "pending");
+                    cmd.Parameters.AddWithValue("@account_privilege", "admin");
+
+                    cmd.ExecuteNonQuery();
+                    conn_db.Close();
+
                 }
-
-                SqlCommand cmd = new SqlCommand("INSERT INTO member (full_name, dob, contact_no, email, state, city, postcode, full_address, member_id, password, account_status, account_privilege) " +
-                    "VALUES (@full_name, @dob, @contact_no, @email, @state, @city, @postcode, @full_address, @member_id, @password, @account_status, @account_privilege)", conn_db);
-
-                cmd.Parameters.AddWithValue("@full_name", name_input.Text.Trim());
-                cmd.Parameters.AddWithValue("@dob", birthdate_input.Text.Trim());
-                cmd.Parameters.AddWithValue("@contact_no", phone_input.Text.Trim());
-                cmd.Parameters.AddWithValue("@email", email_input.Text.Trim());
-                cmd.Parameters.AddWithValue("@state", state_input.Text.Trim());
-                cmd.Parameters.AddWithValue("@city", city_input.Text.Trim());
-                cmd.Parameters.AddWithValue("@postcode", postnumber_input.Text.Trim());
-                cmd.Parameters.AddWithValue("@full_address", address_input.Text.Trim());
-                cmd.Parameters.AddWithValue("@member_id", username_input.Text.Trim());
-                cmd.Parameters.AddWithValue("@password", password_input.Text.Trim());
-                cmd.Parameters.AddWithValue("@account_status", "pending");
-                cmd.Parameters.AddWithValue("@account_privilege", "admin");
-
-                cmd.ExecuteNonQuery();
-                conn_db.Close();
-                
-            }
-            catch (Exception ex)
-            {
-                throw ex;
+                catch (Exception ex)
+                {
+                    throw ex;
+                }
             }
         }
     }
