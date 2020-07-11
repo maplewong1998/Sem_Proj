@@ -15,6 +15,7 @@ namespace Sem_Proj
     public partial class userregistration : System.Web.UI.Page
     {
         string con = ConfigurationManager.ConnectionStrings["conn_db"].ConnectionString;
+
         protected void Page_Load(object sender, EventArgs e)
         {
 
@@ -125,8 +126,8 @@ namespace Sem_Proj
 
                 cmd.Parameters.AddWithValue("@salt", salt);
                 cmd.Parameters.AddWithValue("@hash", hash);
-                cmd.Parameters.AddWithValue("@account_status", "pending");
-                cmd.Parameters.AddWithValue("@account_privilege", "member");
+                cmd.Parameters.AddWithValue("@account_status", "active");
+                cmd.Parameters.AddWithValue("@account_privilege", "admin");
 
                 cmd.ExecuteNonQuery();
                 conn_db.Close();
