@@ -116,13 +116,13 @@
                                 <asp:TextBox CssClass="form-control" ID="username_input" type="text" runat="server"></asp:TextBox>
                             </div>
                             <div class="col-6 form-group">
-                                <asp:TextBox CssClass="form-control" ID="password_inpu" type="password" runat="server"></asp:TextBox>
+                                <asp:TextBox CssClass="form-control" ID="password_input" type="password" runat="server"></asp:TextBox>
                             </div>
                         </div>
 
                         <div class="row">
                             <div class="col-6 form-group mx-auto">
-                                <asp:Button CssClass="btn btn-block btn-primary" ID="sign_up_btn" runat="server" Text="Sign Up" />
+                                <asp:Button CssClass="btn btn-block btn-primary" ID="sign_up_btn" runat="server" Text="Sign Up" OnClick="sign_up_btn_Click" />
                             </div>
                         </div>
 
