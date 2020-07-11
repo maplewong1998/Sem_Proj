@@ -25,45 +25,46 @@ namespace Sem_Proj
             Page.Validate();
             if (Page.IsValid == true)
             {
-                try
+                if (CheckMemberExists())
                 {
-                    SqlConnection conn_db = new SqlConnection(con);
-                    if (conn_db.State == ConnectionState.Closed)
-                    {
-                        conn_db.Open();
-                    }
-
-                    SqlCommand cmd = new SqlCommand("INSERT INTO member (full_name, dob, contact_no, email, state, city, postcode, full_address, member_id, salt, hash, account_status, account_privilege) " +
-                        "VALUES (@full_name, @dob, @contact_no, @email, @state, @city, @postcode, @full_address, @member_id, @salt, @hash, @account_status, @account_privilege)", conn_db);
-
-                    cmd.Parameters.AddWithValue("@full_name", name_input.Text.Trim());
-                    cmd.Parameters.AddWithValue("@dob", birthdate_input.Text.Trim());
-                    cmd.Parameters.AddWithValue("@contact_no", phone_input.Text.Trim());
-                    cmd.Parameters.AddWithValue("@email", email_input.Text.Trim());
-                    cmd.Parameters.AddWithValue("@state", state_input.Text.Trim());
-                    cmd.Parameters.AddWithValue("@city", city_input.Text.Trim());
-                    cmd.Parameters.AddWithValue("@postcode", postnumber_input.Text.Trim());
-                    cmd.Parameters.AddWithValue("@full_address", address_input.Text.Trim());
-                    cmd.Parameters.AddWithValue("@member_id", username_input.Text.Trim());
-
-                    string password = password_input.Text.Trim();
-                    string salt = GenerateSalt();
-                    string hash = GenerateSaltedHash(password, salt);
-
-                    cmd.Parameters.AddWithValue("@salt", salt);
-                    cmd.Parameters.AddWithValue("@hash", hash);
-                    cmd.Parameters.AddWithValue("@account_status", "pending");
-                    cmd.Parameters.AddWithValue("@account_privilege", "admin");
-
-                    cmd.ExecuteNonQuery();
-                    conn_db.Close();
-                    Response.Write("<script>alert('Sign Up Successful!');</script>");
+                    Response.Write("<script>alert('User Existed!');</script>");
                 }
-                catch (Exception ex)
+                else
                 {
-                    Response.Write("<script>alert('" + ex.Message + "');</script>");
-                    throw ex;                    
+                    SignUp();
                 }
+            }        
+        }
+
+        private bool CheckMemberExists()
+        {
+            try
+            {
+                SqlConnection conn_db = new SqlConnection(con);
+                if (conn_db.State == ConnectionState.Closed)
+                {
+                    conn_db.Open();
+                }
+
+                SqlCommand cmd = new SqlCommand("SELECT * FROM member WHERE member_id='" + username_input.Text.Trim() + "';", conn_db);
+                SqlDataAdapter da = new SqlDataAdapter(cmd);
+                DataTable dt = new DataTable();
+                da.Fill(dt);
+
+                if (dt.Rows.Count == 1)
+                {
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
+                
+            }
+            catch (Exception ex)
+            {
+                Response.Write("<script>alert('" + ex.Message + "');</script>");
+                throw ex;
             }
         }
 
@@ -93,6 +94,49 @@ namespace Sem_Proj
             }
 
             return Convert.ToBase64String(algorithm.ComputeHash(plainTextWithSaltBytes));
+        }
+
+        private void SignUp() 
+        {            
+            try
+            {
+                SqlConnection conn_db = new SqlConnection(con);
+                if (conn_db.State == ConnectionState.Closed)
+                {
+                    conn_db.Open();
+                }
+
+                SqlCommand cmd = new SqlCommand("INSERT INTO member (full_name, dob, contact_no, email, state, city, postcode, full_address, member_id, salt, hash, account_status, account_privilege) " +
+                    "VALUES (@full_name, @dob, @contact_no, @email, @state, @city, @postcode, @full_address, @member_id, @salt, @hash, @account_status, @account_privilege)", conn_db);
+
+                cmd.Parameters.AddWithValue("@full_name", name_input.Text.Trim());
+                cmd.Parameters.AddWithValue("@dob", birthdate_input.Text.Trim());
+                cmd.Parameters.AddWithValue("@contact_no", phone_input.Text.Trim());
+                cmd.Parameters.AddWithValue("@email", email_input.Text.Trim());
+                cmd.Parameters.AddWithValue("@state", state_input.Text.Trim());
+                cmd.Parameters.AddWithValue("@city", city_input.Text.Trim());
+                cmd.Parameters.AddWithValue("@postcode", postnumber_input.Text.Trim());
+                cmd.Parameters.AddWithValue("@full_address", address_input.Text.Trim());
+                cmd.Parameters.AddWithValue("@member_id", username_input.Text.Trim());
+
+                string password = password_input.Text.Trim();
+                string salt = GenerateSalt();
+                string hash = GenerateSaltedHash(password, salt);
+
+                cmd.Parameters.AddWithValue("@salt", salt);
+                cmd.Parameters.AddWithValue("@hash", hash);
+                cmd.Parameters.AddWithValue("@account_status", "pending");
+                cmd.Parameters.AddWithValue("@account_privilege", "member");
+
+                cmd.ExecuteNonQuery();
+                conn_db.Close();
+                Response.Write("<script>alert('Sign Up Successful!');</script>");
+            }
+            catch (Exception ex)
+            {
+                Response.Write("<script>alert('" + ex.Message + "');</script>");
+                throw ex;
+            }            
         }
     }
 }
