@@ -27,96 +27,81 @@
                         <div class="row">
                             <div class="col-6">
                                 Full Name
+                                <div class="form-group">
+                                    <asp:TextBox CssClass="form-control" ID="name_input" type="text" runat="server"></asp:TextBox>
+                                </div>
                             </div>
                             <div class="col-6">
                                 Date of Birth
-                            </div>
-                        </div>
-
-                        <div class="row">
-                            <div class="col-6 form-group">
-                                <asp:TextBox CssClass="form-control" ID="name_input" type="text" runat="server"></asp:TextBox>
-                            </div>
-                            <div class="col-6 form-group">
-                                <asp:TextBox CssClass="form-control" ID="birthdate_input" type="date" runat="server"></asp:TextBox>
+                                <div class="form-group">
+                                    <asp:TextBox CssClass="form-control" ID="birthdate_input" type="date" runat="server"></asp:TextBox>
+                                </div>
                             </div>
                         </div>
 
                         <div class="row">
                             <div class="col-6">
                                 Contact Number
+                                <div class="form-group">
+                                    <asp:TextBox CssClass="form-control" ID="phone_input" type="tel" runat="server"></asp:TextBox>
+                                </div>
                             </div>
                             <div class="col-6">
                                 Email Address
-                            </div>
-                        </div>
-
-                        <div class="row">
-                            <div class="col-6 form-group">
-                                <asp:TextBox CssClass="form-control" ID="phone_input" type="tel" runat="server"></asp:TextBox>
-                            </div>
-                            <div class="col-6 form-group">
-                                <asp:TextBox CssClass="form-control" ID="email_input" type="email" runat="server"></asp:TextBox>
+                                <div class="form-group">
+                                    <asp:TextBox CssClass="form-control" ID="email_input" type="email" runat="server"></asp:TextBox>
+                                </div>
                             </div>
                         </div>
 
                         <div class="row">
                             <div class="col-4">
                                 State
+                                <div class="group">
+                                    <asp:TextBox CssClass="form-control" ID="state_input" type="text" runat="server"></asp:TextBox>
+                                </div>
                             </div>
                             <div class="col-4">
                                 City
+                                <div class="form-group">
+                                    <asp:TextBox CssClass="form-control" ID="city_input" type="text" runat="server"></asp:TextBox>
+                                </div>
                             </div>
                             <div class="col-4">
-                                Post Number
-                            </div>
-                        </div>
-
-                        <div class="row">
-                            <div class="col-4 form-group">
-                                <asp:TextBox CssClass="form-control" ID="state_input" type="text" runat="server"></asp:TextBox>
-                            </div>
-                            <div class="col-4 form-group">
-                                <asp:TextBox CssClass="form-control" ID="city_input" type="text" runat="server"></asp:TextBox>
-                            </div>
-                            <div class="col-4 form-group">
-                                <asp:TextBox CssClass="form-control" ID="postnumber_input" type="text" runat="server"></asp:TextBox>
+                                Postcode
+                                <div class="form-group">
+                                    <asp:TextBox CssClass="form-control" ID="postnumber_input" type="text" runat="server"></asp:TextBox>
+                                </div>
                             </div>
                         </div>
 
                         <div class="row">
                             <div class="col-12">
                                 Address
-                            </div>
-                        </div>
-
-                        <div class="row">
-                            <div class="col-12 form-group">
+                                <div class="form-group">
                                 <asp:TextBox CssClass="form-control" ID="address_input" TextMode="MultiLine" type="text" Rows="3" runat="server"></asp:TextBox>
                             </div>
+                            </div>
                         </div>
 
                         <div class="row">
-                            <div class="col">
-                                <center><h5>Login Credentials</h5></center>
+                            <div class="col-12 d-flex justify-content-center">
+                                <h5>Login Credentials</h5>
                             </div>
                         </div>
 
                         <div class="row">
                             <div class="col-6">
                                 Username
+                                <div class="form-group">
+                                    <asp:TextBox CssClass="form-control" ID="username_input" type="text" runat="server"></asp:TextBox>
+                                </div>
                             </div>
                             <div class="col-6">
                                 Password
-                            </div>
-                        </div>
-
-                        <div class="row">
-                            <div class="col-6 form-group">
-                                <asp:TextBox CssClass="form-control" ID="username_input" type="text" runat="server"></asp:TextBox>
-                            </div>
-                            <div class="col-6 form-group">
-                                <asp:TextBox CssClass="form-control" ID="password_input" type="password" runat="server"></asp:TextBox>
+                                <div class="form-group">
+                                    <asp:TextBox CssClass="form-control" ID="password_input" type="password" runat="server"></asp:TextBox>
+                                </div>
                             </div>
                         </div>
 
