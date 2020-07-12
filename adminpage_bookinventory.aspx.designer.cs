@@ -15,22 +15,22 @@ namespace Sem_Proj
     {
 
         /// <summary>
-        /// FileUpload1 control.
+        /// image_uploader control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.FileUpload FileUpload1;
+        protected global::System.Web.UI.WebControls.FileUpload image_uploader;
 
         /// <summary>
-        /// TextBox1 control.
+        /// isbn_input control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBox1;
+        protected global::System.Web.UI.WebControls.TextBox isbn_input;
 
         /// <summary>
         /// LinkButton4 control.
@@ -42,156 +42,165 @@ namespace Sem_Proj
         protected global::System.Web.UI.WebControls.LinkButton LinkButton4;
 
         /// <summary>
-        /// TextBox2 control.
+        /// bookname_input control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBox2;
+        protected global::System.Web.UI.WebControls.TextBox bookname_input;
 
         /// <summary>
-        /// DropDownList1 control.
+        /// language_dropdown control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList DropDownList1;
+        protected global::System.Web.UI.WebControls.DropDownList language_dropdown;
 
         /// <summary>
-        /// TextBox8 control.
+        /// authorname_input control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBox8;
+        protected global::System.Web.UI.WebControls.TextBox authorname_input;
 
         /// <summary>
-        /// ListBox1 control.
+        /// genre_dropdown control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ListBox ListBox1;
+        protected global::System.Web.UI.WebControls.ListBox genre_dropdown;
 
         /// <summary>
-        /// publisher_name control.
+        /// publishername_input control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox publisher_name;
+        protected global::System.Web.UI.WebControls.TextBox publishername_input;
 
         /// <summary>
-        /// publish_date control.
+        /// publishdate_input control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox publish_date;
+        protected global::System.Web.UI.WebControls.TextBox publishdate_input;
 
         /// <summary>
-        /// edition control.
+        /// edition_input control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox edition;
+        protected global::System.Web.UI.WebControls.TextBox edition_input;
 
         /// <summary>
-        /// cost control.
+        /// cost_input control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox cost;
+        protected global::System.Web.UI.WebControls.TextBox cost_input;
 
         /// <summary>
-        /// pages control.
+        /// pages_input control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox pages;
+        protected global::System.Web.UI.WebControls.TextBox pages_input;
 
         /// <summary>
-        /// actual_stock control.
+        /// actualstock_input control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox actual_stock;
+        protected global::System.Web.UI.WebControls.TextBox actualstock_input;
 
         /// <summary>
-        /// current_stock control.
+        /// currentstock_input control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox current_stock;
+        protected global::System.Web.UI.WebControls.TextBox currentstock_input;
 
         /// <summary>
-        /// issued control.
+        /// issuedbook_show control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox issued;
+        protected global::System.Web.UI.WebControls.TextBox issuedbook_show;
 
         /// <summary>
-        /// description control.
+        /// description_input control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox description;
+        protected global::System.Web.UI.WebControls.TextBox description_input;
 
         /// <summary>
-        /// Button1 control.
+        /// addbtn control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button Button1;
+        protected global::System.Web.UI.WebControls.Button addbtn;
 
         /// <summary>
-        /// Button3 control.
+        /// updatebtn control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button Button3;
+        protected global::System.Web.UI.WebControls.Button updatebtn;
 
         /// <summary>
-        /// Button2 control.
+        /// deletebtn control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button Button2;
+        protected global::System.Web.UI.WebControls.Button deletebtn;
 
         /// <summary>
-        /// issued_book_list control.
+        /// book_list control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.GridView issued_book_list;
+        protected global::System.Web.UI.WebControls.GridView book_list;
+
+        /// <summary>
+        /// SqlDataSource1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.SqlDataSource SqlDataSource1;
     }
 }

@@ -1713,16 +1713,12 @@
     <Content Include="fontawesome\webfonts\fa-brands-400.svg" />
     <Content Include="fontawesome\webfonts\fa-regular-400.svg" />
     <Content Include="fontawesome\webfonts\fa-solid-900.svg" />
+    <Content Include="Global.asax" />
     <Content Include="homepage.aspx" />
     <Content Include="homepage_library.aspx" />
     <Content Include="owl\css\owl.carousel.css" />
     <Content Include="owl\css\owl.theme.default.css" />
     <Content Include="owl\js\owl.carousel.js" />
-    <Content Include="resources\books\b1.jpg" />
-    <Content Include="resources\books\b2.jpg" />
-    <Content Include="resources\books\b3.jpg" />
-    <Content Include="resources\books\b4.jpg" />
-    <Content Include="resources\books\b5.jpg" />
     <Content Include="resources\imgs\adminuser.png" />
     <Content Include="resources\imgs\book-online.png" />
     <Content Include="resources\imgs\books.png" />
@@ -1769,6 +1765,9 @@
     <Compile Include="adminpage_membermanagement.aspx.designer.cs">
       <DependentUpon>adminpage_membermanagement.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
     <Compile Include="homepage.aspx.cs">
       <DependentUpon>homepage.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -1790,13 +1789,6 @@
     </Compile>
     <Compile Include="homepage.Master.designer.cs">
       <DependentUpon>homepage.Master</DependentUpon>
-    </Compile>
-    <Compile Include="adminpage.Master.cs">
-      <DependentUpon>adminpage.Master</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="adminpage.Master.designer.cs">
-      <DependentUpon>adminpage.Master</DependentUpon>
     </Compile>
     <Compile Include="homepage_userlogin.aspx.cs">
       <DependentUpon>homepage_userlogin.aspx</DependentUpon>
@@ -1898,7 +1890,6 @@
     <Content Include="fontawesome\webfonts\fa-solid-900.woff2" />
     <None Include="packages.config" />
     <Content Include="homepage.Master" />
-    <Content Include="adminpage.Master" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -1906,7 +1897,9 @@
       <DependentUpon>Web.config</DependentUpon>
     </None>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="resources\books\" />
+  </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>

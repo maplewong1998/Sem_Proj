@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/adminpage.Master" AutoEventWireup="true" CodeBehind="adminpage_commentreview.aspx.cs" Inherits="Sem_Proj.WebForm3" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/homepage.Master" AutoEventWireup="true" CodeBehind="adminpage_commentreview.aspx.cs" Inherits="Sem_Proj.WebForm3" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder" runat="server">
     <div id="commentreview" class="container-fluid">
         <div class="container mt-4">

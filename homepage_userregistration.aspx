@@ -109,8 +109,8 @@
                             <div class="col-6">
                                 Password
                                 <div class="form-group">
-                                    <asp:TextBox CssClass="form-control" ID="password_input" type="password" runat="server"></asp:TextBox>
-                                    <asp:RequiredFieldValidator CssClass="text-danger" ID="RequiredFieldValidator10" ControlToValidate="password_input" runat="server" ErrorMessage="*Field required"></asp:RequiredFieldValidator>
+                                    <asp:TextBox CssClass="form-control" ID="password_input_registration" type="password" runat="server"></asp:TextBox>
+                                    <asp:RequiredFieldValidator CssClass="text-danger" ID="RequiredFieldValidator10" ControlToValidate="password_input_registration" runat="server" ErrorMessage="*Field required"></asp:RequiredFieldValidator>
                                 </div>
                             </div>
                         </div>
