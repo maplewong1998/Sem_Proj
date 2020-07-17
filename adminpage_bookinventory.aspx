@@ -195,23 +195,72 @@
                                 </div>
 
                                 <div class="row">
-                                    <div class="col">
+                                    <div class="col-12">
                                         <asp:GridView ID="book_list" runat="server" AutoGenerateColumns="False" DataKeyNames="book_id" DataSourceID="SqlDataSource1">
                                             <Columns>
-                                                <asp:BoundField DataField="book_id" HeaderText="book_id" ReadOnly="True" SortExpression="book_id" />
-                                                <asp:BoundField DataField="book_name" HeaderText="book_name" SortExpression="book_name" />
-                                                <asp:BoundField DataField="genre" HeaderText="genre" SortExpression="genre" />
-                                                <asp:BoundField DataField="author_name" HeaderText="author_name" SortExpression="author_name" />
-                                                <asp:BoundField DataField="publisher_name" HeaderText="publisher_name" SortExpression="publisher_name" />
-                                                <asp:BoundField DataField="publish_date" HeaderText="publish_date" SortExpression="publish_date" />
-                                                <asp:BoundField DataField="language" HeaderText="language" SortExpression="language" />
-                                                <asp:BoundField DataField="edition" HeaderText="edition" SortExpression="edition" />
-                                                <asp:BoundField DataField="book_cost" HeaderText="book_cost" SortExpression="book_cost" />
-                                                <asp:BoundField DataField="no_of_pages" HeaderText="no_of_pages" SortExpression="no_of_pages" />
-                                                <asp:BoundField DataField="book_description" HeaderText="book_description" SortExpression="book_description" />
-                                                <asp:BoundField DataField="actual_stock" HeaderText="actual_stock" SortExpression="actual_stock" />
-                                                <asp:BoundField DataField="current_stock" HeaderText="current_stock" SortExpression="current_stock" />
-                                                <asp:BoundField DataField="book_img" HeaderText="book_img" SortExpression="book_img" />
+                                                <asp:TemplateField ShowHeader="false">
+                                                    <ItemTemplate>
+                                                        <div class="container-fluid">
+                                                            <div class="row">
+                                                                <div class="col-12 col-md-9 col-lg-9 col-xl-9">
+                                                                    <div class="row">
+                                                                        <div class="col-12">
+                                                                            <asp:Label ID="book_name" runat="server" Text='<%# Eval("book_name") %>' Font-Bold="True" Font-Size="Large"></asp:Label>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="row">
+                                                                        <div class="col-12">
+                                                                            ISBN -
+                                                                            <asp:Label ID="book_id" runat="server" Text='<%# Eval("book_id") %>'></asp:Label>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="row">
+                                                                        <div class="col-12">
+                                                                            Author -
+                                                                            <asp:Label ID="author" runat="server" Text='<%# Eval("author_name") %>'></asp:Label>
+                                                                            &nbsp;| Genre -
+                                                                            <asp:Label ID="genre" runat="server" Text='<%# Eval("genre") %>'></asp:Label>
+                                                                            &nbsp;| Language -
+                                                                            <asp:Label ID="language" runat="server" Text='<%# Eval("language") %>'></asp:Label>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="row">
+                                                                        <div class="col-12">
+                                                                            Publisher -
+                                                                            <asp:Label ID="publisher" runat="server" Text='<%# Eval("publisher_name") %>'></asp:Label>
+                                                                            &nbsp;| Publish Date -
+                                                                            <asp:Label ID="publish_date" runat="server" Text='<%# Eval("publish_date") %>'></asp:Label>
+                                                                            &nbsp;| Pages -
+                                                                            <asp:Label ID="pages" runat="server" Text='<%# Eval("no_of_pages") %>'></asp:Label>
+                                                                            &nbsp;| Edition -
+                                                                            <asp:Label ID="edition" runat="server" Text='<%# Eval("edition") %>'></asp:Label>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="row">
+                                                                        <div class="col-12">
+                                                                            Cost -
+                                                                            <asp:Label ID="cost" runat="server" Text='<%# Eval("book_cost") %>'></asp:Label>
+                                                                            &nbsp;| Actual Stock -
+                                                                            <asp:Label ID="actual_stock" runat="server" Text='<%# Eval("actual_stock") %>'></asp:Label>
+                                                                            &nbsp;| Available -
+                                                                            <asp:Label ID="available_stock" runat="server" Text='<%# Eval("current_stock") %>'></asp:Label>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="row">
+                                                                        <div class="col-12">
+                                                                            Description -
+                                                                            <asp:Label ID="Label11" runat="server" Text='<%# Eval("book_description") %>'></asp:Label>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="col-12 col-md-3 col-lg-3 col-xl-3">
+                                                                    <asp:Image class="img-fluid p-1" ID="Image1" runat="server" ImageUrl='<%# Eval("book_img") %>' />
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </ItemTemplate>
+                                                </asp:TemplateField>
+
                                             </Columns>
                                         </asp:GridView>
                                         <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:elibraryDBConnectionString %>" SelectCommand="SELECT * FROM [book]"></asp:SqlDataSource>
