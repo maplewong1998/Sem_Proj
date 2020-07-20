@@ -42,7 +42,7 @@ namespace Sem_Proj
             }
             catch (Exception ex)
             {
-
+                throw ex;
             }
         }
 

@@ -30,7 +30,7 @@ namespace Sem_Proj
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button search_btn;
+        protected global::System.Web.UI.WebControls.LinkButton search_btn;
 
         /// <summary>
         /// accounstatus_input control.
@@ -42,31 +42,31 @@ namespace Sem_Proj
         protected global::System.Web.UI.WebControls.TextBox accounstatus_input;
 
         /// <summary>
-        /// Button1 control.
+        /// active_btn control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.LinkButton Button1;
+        protected global::System.Web.UI.WebControls.LinkButton active_btn;
 
         /// <summary>
-        /// LinkButton1 control.
+        /// pending_btn control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.LinkButton LinkButton1;
+        protected global::System.Web.UI.WebControls.LinkButton pending_btn;
 
         /// <summary>
-        /// LinkButton2 control.
+        /// suspend_btn control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.LinkButton LinkButton2;
+        protected global::System.Web.UI.WebControls.LinkButton suspend_btn;
 
         /// <summary>
         /// name_input control.
@@ -78,13 +78,13 @@ namespace Sem_Proj
         protected global::System.Web.UI.WebControls.TextBox name_input;
 
         /// <summary>
-        /// username_input control.
+        /// privilege control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox username_input;
+        protected global::System.Web.UI.WebControls.TextBox privilege;
 
         /// <summary>
         /// birthdate_input control.
@@ -166,5 +166,14 @@ namespace Sem_Proj
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.GridView member_list;
+
+        /// <summary>
+        /// SqlDataSource1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.SqlDataSource SqlDataSource1;
     }
 }

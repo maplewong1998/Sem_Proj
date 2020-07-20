@@ -33,7 +33,7 @@
 
                                 <div class="row">
                                     <div class="col-4">
-                                        <label>ISBN</label>
+                                        <label>ISBN-13</label>
                                         <div class="form-group input-group">
                                             <asp:TextBox CssClass="form-control" ID="isbn_input" runat="server"></asp:TextBox>
                                             <div class="input-group-append">                                                
@@ -125,7 +125,7 @@
                                     <div class="col-4">
                                         <label>Cost (per unit)</label>
                                         <div class="form-group">
-                                            <asp:TextBox CssClass="form-control" ID="cost_input" runat="server" TextMode="Number"></asp:TextBox>
+                                            <asp:TextBox CssClass="form-control" ID="cost_input" runat="server" TextMode="Number" step="0.01"></asp:TextBox>
                                         </div>
                                     </div>
                                     <div class="col-4">
@@ -196,13 +196,16 @@
 
                                 <div class="row">
                                     <div class="col-12">
-                                        <asp:GridView ID="book_list" runat="server" AutoGenerateColumns="False" DataKeyNames="book_id" DataSourceID="SqlDataSource1">
+                                        <asp:GridView class="table" ID="book_list" runat="server" AutoGenerateColumns="False" DataKeyNames="book_id" DataSourceID="SqlDataSource1">
                                             <Columns>
                                                 <asp:TemplateField ShowHeader="false">
                                                     <ItemTemplate>
                                                         <div class="container-fluid">
                                                             <div class="row">
-                                                                <div class="col-12 col-md-9 col-lg-9 col-xl-9">
+                                                                <div class="col-1">
+                                                                    <%# Container.DataItemIndex+1 %>
+                                                                </div>
+                                                                <div class="col-11 col-md-9 col-lg-9 col-xl-9">
                                                                     <div class="row">
                                                                         <div class="col-12">
                                                                             <asp:Label ID="book_name" runat="server" Text='<%# Eval("book_name") %>' Font-Bold="True" Font-Size="Large"></asp:Label>
@@ -210,7 +213,7 @@
                                                                     </div>
                                                                     <div class="row">
                                                                         <div class="col-12">
-                                                                            ISBN -
+                                                                            ISBN-13 -
                                                                             <asp:Label ID="book_id" runat="server" Text='<%# Eval("book_id") %>'></asp:Label>
                                                                         </div>
                                                                     </div>
@@ -253,7 +256,7 @@
                                                                         </div>
                                                                     </div>
                                                                 </div>
-                                                                <div class="col-12 col-md-3 col-lg-3 col-xl-3">
+                                                                <div class="col-12 col-md-2 col-lg-2 col-xl-2">
                                                                     <asp:Image class="img-fluid p-1" ID="Image1" runat="server" ImageUrl='<%# Eval("book_img") %>' />
                                                                 </div>
                                                             </div>

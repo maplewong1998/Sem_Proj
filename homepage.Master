@@ -17,7 +17,7 @@
     <script src="bootstrap/js/popper.js"></script>
     <script src="bootstrap/js/bootstrap.js"></script>
     <script src="owl/js/owl.carousel.js"></script>
-
+    <script src="datatables/js/jquery.dataTables.js"></script>
     <title>E-library</title>
 
 </head>

@@ -25,10 +25,10 @@
                                 </div>
                             </div>
 
-                            <div class="row">
+                            <div class="row mb-1">
                                 <div class="col-6">
-                                    Member ID
-                                </div>                                
+                                    Member
+                                </div>
                                 <div class="col-6">
                                     Account Status
                                 </div>
@@ -38,100 +38,70 @@
                                 <div class="col-6 form-group input-group">
                                     <asp:TextBox CssClass="form-control" ID="memberid_input" runat="server"></asp:TextBox>
                                     <div class="input-group-append">
-                                        <asp:Button CssClass="btn input-group-text" ID="search_btn" runat="server" Text="Go" />
+                                        <asp:LinkButton CssClass="btn btn-primary" ID="search_btn" runat="server" Text="g" OnClick="search_btn_Click"><i class="fas fa-search"></i></asp:LinkButton>
                                     </div>
                                 </div>                                
                                 <div class="col-6 form-group input-group">
                                     <asp:TextBox CssClass="form-control" ID="accounstatus_input" runat="server" ReadOnly="True"></asp:TextBox>
                                     <div class="input-group-append">
-                                        <asp:LinkButton CssClass="btn btn-success" ID="Button1" runat="server" Text="S"><i class="fas fa-check-circle"></i></asp:LinkButton>
-                                        <asp:LinkButton CssClass="btn btn-warning" ID="LinkButton1" runat="server" Text="P"><i class="far fa-pause-circle"></i></asp:LinkButton>
-                                        <asp:LinkButton CssClass="btn btn-danger" ID="LinkButton2" runat="server" Text="D"><i class="fas fa-times-circle"></i></asp:LinkButton>
+                                        <asp:LinkButton CssClass="btn btn-success" ID="active_btn" runat="server" Text="a" OnClick="active_btn_Click"><i class="fas fa-check-circle"></i></asp:LinkButton>
+                                        <asp:LinkButton CssClass="btn btn-warning" ID="pending_btn" runat="server" Text="P" OnClick="pending_btn_Click"><i class="far fa-pause-circle"></i></asp:LinkButton>
+                                        <asp:LinkButton CssClass="btn btn-danger" ID="suspend_btn" runat="server" Text="s" OnClick="suspend_btn_Click"><i class="fas fa-times-circle"></i></asp:LinkButton>
                                     </div>
                                 </div>
                             </div>
 
                             <div class="row">
-                                <div class="col-6">
-                                    Full Name
-                                </div>
-                                <div class="col-6">
-                                    Username
-                                </div>
-                            </div>
-
-                            <div class="row">
                                 <div class="col-6 form-group">
+                                    <label>Full Name</label>
                                     <asp:TextBox CssClass="form-control" ID="name_input" runat="server" ReadOnly="True"></asp:TextBox>
                                 </div>
                                 <div class="col-6 form-group">
-                                    <asp:TextBox CssClass="form-control" ID="username_input" runat="server" ReadOnly="True"></asp:TextBox>
-                                </div>
-                            </div>
-
-                            <div class="row">
-                                <div class="col-4">
-                                    Date of Birth
-                                </div>
-                                <div class="col-4">
-                                    Contact Number
-                                </div>
-                                <div class="col-4">
-                                    Email Address
+                                    <label>Account Privilege</label>
+                                    <asp:TextBox CssClass="form-control" ID="privilege" runat="server" ReadOnly="True"></asp:TextBox>
                                 </div>
                             </div>
 
                             <div class="row">
                                 <div class="col-4 form-group">
+                                    <label>Date of Birth</label>
                                     <asp:TextBox CssClass="form-control" ID="birthdate_input" runat="server" ReadOnly="True"></asp:TextBox>
                                 </div>
                                 <div class="col-4 form-group">
+                                    <label>Contact Number</label>
                                     <asp:TextBox CssClass="form-control" ID="phone_input" runat="server" ReadOnly="True"></asp:TextBox>
                                 </div>
                                 <div class="col-4 form-group">
+                                    <label>Email Address</label>
                                     <asp:TextBox CssClass="form-control" ID="email_input" runat="server" ReadOnly="True"></asp:TextBox>
                                 </div>
                             </div>
 
                             <div class="row">
-                                <div class="col-4">
-                                    State
-                                </div>
-                                <div class="col-4">
-                                    City
-                                </div>
-                                <div class="col-4">
-                                    Post Number
-                                </div>
-                            </div>
-
-                            <div class="row">
                                 <div class="col-4 form-group">
+                                    <label>State</label>
                                     <asp:TextBox CssClass="form-control" ID="state_input" runat="server" ReadOnly="True"></asp:TextBox>
                                 </div>
                                 <div class="col-4 form-group">
+                                    <label>City</label>
                                     <asp:TextBox CssClass="form-control" ID="city_input" runat="server" ReadOnly="True"></asp:TextBox>
                                 </div>
                                 <div class="col-4 form-group">
+                                    <label>Post Number</label>
                                     <asp:TextBox CssClass="form-control" ID="postnumber_input" runat="server" ReadOnly="True"></asp:TextBox>
                                 </div>
                             </div>
 
                             <div class="row">
-                                <div class="col-12">
-                                    Address
-                                </div>
-                            </div>
-
-                            <div class="row">
                                 <div class="col-12 form-group">
+                                    <label>Address</label>
                                     <asp:TextBox CssClass="form-control" ID="address_input" TextMode="MultiLine" Rows="3" runat="server" ReadOnly="True"></asp:TextBox>
                                 </div>
                             </div>
 
                             <div class="row">
                                 <div class="col-7 form-group mx-auto">
-                                    <asp:Button CssClass="btn btn-block btn-danger" ID="delete_user_btn" runat="server" Text="Delete User Permanently" />
+                                    <asp:Button CssClass="btn btn-block btn-danger" ID="delete_user_btn" runat="server" Text="Delete User Permanently" OnClick="delete_user_btn_Click"/>
                                 </div>
                             </div>
                         </div>
@@ -155,7 +125,17 @@
 
                             <div class="row">
                                 <div class="col">
-                                    <asp:GridView CssClass="" ID="member_list" runat="server"></asp:GridView>
+                                    <asp:GridView class="table table-striped table-bordered" ID="member_list" runat="server" AutoGenerateColumns="False" DataKeyNames="member_id" DataSourceID="SqlDataSource1">
+                                        <Columns>
+                                            <asp:BoundField DataField="member_id" HeaderText="ID" SortExpression="member_id" ReadOnly="True" />
+                                            <asp:BoundField DataField="full_name" HeaderText="Name" SortExpression="full_name" />
+                                            <asp:BoundField DataField="contact_no" HeaderText="Contact" SortExpression="contact_no" />
+                                            <asp:BoundField DataField="email" HeaderText="Email" SortExpression="email" />
+                                            <asp:BoundField DataField="account_status" HeaderText="Status" SortExpression="account_status" />
+                                            <asp:BoundField DataField="account_privilege" HeaderText="Privilege" SortExpression="account_privilege" />
+                                        </Columns>
+                                    </asp:GridView>
+                                    <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:elibraryDBConnectionString %>" SelectCommand="SELECT [full_name], [dob], [contact_no], [email], [state], [city], [postcode], [full_address], [member_id], [account_status], [account_privilege] FROM [member]"></asp:SqlDataSource>
                                 </div>
                             </div>
 
@@ -165,4 +145,9 @@
             </div>
         </div>
     </div>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $(".table").prepend($("<thead></thead>").append($(this).find("tr:first"))).dataTable();
+        });
+    </script>
 </asp:Content>
