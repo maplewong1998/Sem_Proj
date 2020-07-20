@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/adminpage.Master" AutoEventWireup="true" CodeBehind="userprofile.aspx.cs" Inherits="Sem_Proj.userprofile" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/homepage.Master" AutoEventWireup="true" CodeBehind="userprofile.aspx.cs" Inherits="Sem_Proj.userprofile" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder" runat="server">
     <div class="container-fluid">
         <div class="container-fluid mt-4">

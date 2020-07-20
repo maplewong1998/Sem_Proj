@@ -11,7 +11,26 @@ namespace Sem_Proj
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            try
+            {
+                if (Session["role"].Equals(""))
+                {
+                    CommentBox.Visible = false;
+                }
+                else if (Session["role"].Equals("member"))
+                {
+                    CommentBox.Visible = true;
+                }
+                else if (Session["role"].Equals("admin"))
+                {
+                    CommentBox.Visible = true;
 
+                }
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
         }
     }
 }

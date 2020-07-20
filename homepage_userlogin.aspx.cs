@@ -14,7 +14,7 @@ namespace Sem_Proj
 {
     public partial class userlogin : System.Web.UI.Page
     {
-        string con = ConfigurationManager.ConnectionStrings["conn_db"].ConnectionString;
+        private static string con = ConfigurationManager.ConnectionStrings["conn_db"].ConnectionString;
 
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -50,39 +50,61 @@ namespace Sem_Proj
             return Convert.ToBase64String(algorithm.ComputeHash(plainTextWithSaltBytes));
         }
 
+        private static DataTable SqlDataTable(string sql, IDictionary<string, object> values)
+        {
+            using (SqlConnection conn = new SqlConnection(con))
+            using (SqlCommand cmd = conn.CreateCommand())
+            {
+                conn.Open();
+                cmd.CommandText = sql;
+                foreach (KeyValuePair<string, object> item in values)
+                {
+                    cmd.Parameters.AddWithValue("@" + item.Key, item.Value);
+                }
+
+                DataTable table = new DataTable();
+                using (var reader = cmd.ExecuteReader())
+                {
+                    table.Load(reader);
+                    return table;
+                }
+            }
+        }
+
         private void SignIn()
         {
             try
             {
-                SqlConnection conn_db = new SqlConnection(con);
-                if (conn_db.State == ConnectionState.Closed)
-                {
-                    conn_db.Open();
-                }
-
-                SqlCommand cmd = new SqlCommand("SELECT * FROM member WHERE member_id = '" + username_input.Text.Trim() + "'", conn_db);
-                SqlDataReader dr = cmd.ExecuteReader();
-
-                if (dr.HasRows)
-                {
-                    while (dr.Read())
+                DataTable dt = SqlDataTable("SELECT * FROM member WHERE member_id= @member_id",
+                    new Dictionary<string, object>
                     {
-                        if(GenerateSaltedHash(password_input.Text.Trim(), dr.GetValue(9).ToString()) == dr.GetValue(10).ToString())
-                        {
-                            Response.Write("<script>alert('Login successful!');</script>");
-                        }
-                        else
-                        {
-                            Response.Write("<script>alert('Invalid password!');</script>");
-                        }
+                        { "member_id", username_input.Text.Trim() }
                     }
+                );
+
+                if (dt.Rows.Count == 1)
+                {
+                    DataRow row = dt.Rows[0];
+
+                    if(GenerateSaltedHash(password_input.Text.Trim(), row["salt"].ToString()) == row["hash"].ToString())
+                    {
+                        Session["username"] = row["member_id"].ToString();
+                        Session["fullname"] = row["full_name"].ToString();
+                        Session["role"] = row["account_privilege"].ToString();
+                        Session["status"] = row["account_status"].ToString();
+                        Response.Write("<script>alert('Login successful!');</script>");
+                        Response.Redirect("homepage.aspx");
+                    }
+                    else
+                    {
+                        Response.Write("<script>alert('Invalid credentials!');</script>");
+                    }
+
                 }
                 else
                 {
-                    Response.Write("<script>alert('Invalid username!');</script>");
+                    Response.Write("<script>alert('Invalid credentials!');</script>");
                 }
-                dr.Close();
-                conn_db.Close();
 
             }
             catch (Exception ex)

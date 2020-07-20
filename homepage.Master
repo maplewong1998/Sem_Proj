@@ -13,11 +13,11 @@
     <link href="fontawesome/css/all.css" rel="stylesheet" />
 
     <%--js--%>
-        <script src="bootstrap/js/jquery-3.5.1.js"></script>
-        <script src="bootstrap/js/popper.js"></script>
-        <script src="bootstrap/js/bootstrap.js"></script>
-        <script src="owl/js/owl.carousel.js"></script>
-
+    <script src="bootstrap/js/jquery-3.5.1.js"></script>
+    <script src="bootstrap/js/popper.js"></script>
+    <script src="bootstrap/js/bootstrap.js"></script>
+    <script src="owl/js/owl.carousel.js"></script>
+    <script src="datatables/js/jquery.dataTables.js"></script>
     <title>E-library</title>
 
 </head>
@@ -27,13 +27,40 @@
         <header>
             <div id="topHeader">
                 <div class="container-fluid">
-                    <nav class="navbar navbar-expand justify-content-end">
+                    <nav class="navbar navbar-expand">
                         <ul class="navbar-nav">
                             <li class="nav-item">
-                                <a class="nav-link p-1" href="homepage_userregistration.aspx"><i class="fas fa-user-plus"></i> Create an account</a>
+                                <asp:LinkButton CssClass="nav-link p-1" ID="sign_up_menu" runat="server" OnClick="sign_up_menu_Click" CausesValidation="false"><i class="fas fa-user-plus"></i> Create an account</asp:LinkButton>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link p-1" href="homepage_userlogin.aspx"><i class="fas fa-sign-in-alt"></i> Sign in</a>
+                                <asp:LinkButton CssClass="nav-link p-1" ID="sign_in_menu" runat="server" OnClick="sign_in_menu_Click" CausesValidation="false"><i class="fas fa-sign-in-alt"></i> Sign in</asp:LinkButton>
+                            </li>
+                            <li class="nav-item">
+                                <asp:LinkButton CssClass="nav-link p-1" ID="sign_out_menu" runat="server" OnClick="sign_out_menu_Click"><i class="fas fa-sign-out-alt"></i> Sign Out</asp:LinkButton>
+                            </li>
+                            <li class="nav-item">
+                                <asp:Menu CssClass="nav-link p-1" ID="hello_menu_admin" Text="Hello" runat="server" Orientation="Horizontal">
+                                    <DynamicMenuItemStyle BackColor="GhostWhite" ItemSpacing="3px" VerticalPadding="1px" HorizontalPadding="10px" Width="180px" />
+                                    <Items>
+                                        <asp:MenuItem navigateurl="#" Text="Hello, Admin">
+                                            <asp:MenuItem navigateurl="userprofile.aspx" Text="Profile"></asp:MenuItem>
+                                            <asp:MenuItem navigateurl="adminpage_membermanagement.aspx" Text="Member Management"></asp:MenuItem>
+                                            <asp:MenuItem navigateurl="adminpage_bookinventory.aspx" Text="Book Inventory"></asp:MenuItem>
+                                            <asp:MenuItem navigateurl="adminpage_bookissuing.aspx" Text="Book Issuing"></asp:MenuItem>
+                                            <asp:MenuItem navigateurl="adminpage_commentreview.aspx" Text="Comment Review"></asp:MenuItem>
+                                        </asp:MenuItem>
+                                    </Items>
+                                </asp:Menu>
+                            </li>
+                            <li class="nav-item">
+                                <asp:Menu CssClass="nav-link p-1" ID="hello_menu_member" Text="Hello" runat="server" Orientation="Horizontal">
+                                    <DynamicMenuItemStyle BackColor="GhostWhite" ItemSpacing="3px" VerticalPadding="1px" HorizontalPadding="10px" Width="180px" />
+                                    <Items>
+                                        <asp:MenuItem navigateurl="#" Text="Hello, Member">
+                                            <asp:MenuItem navigateurl="userprofile.aspx" Text="Profile"></asp:MenuItem>
+                                        </asp:MenuItem>
+                                    </Items>
+                                </asp:Menu>
                             </li>
                         </ul>
                     </nav>

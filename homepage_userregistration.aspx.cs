@@ -14,7 +14,7 @@ namespace Sem_Proj
 {
     public partial class userregistration : System.Web.UI.Page
     {
-        string con = ConfigurationManager.ConnectionStrings["conn_db"].ConnectionString;
+        private static string con = ConfigurationManager.ConnectionStrings["conn_db"].ConnectionString;
 
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -24,7 +24,7 @@ namespace Sem_Proj
         protected void sign_up_btn_Click(object sender, EventArgs e)
         {
             Page.Validate();
-            if (Page.IsValid == true)
+            if (Page.IsValid)
             {
                 if (CheckMemberExists())
                 {
@@ -41,16 +41,12 @@ namespace Sem_Proj
         {
             try
             {
-                SqlConnection conn_db = new SqlConnection(con);
-                if (conn_db.State == ConnectionState.Closed)
-                {
-                    conn_db.Open();
-                }
-
-                SqlCommand cmd = new SqlCommand("SELECT * FROM member WHERE member_id='" + username_input.Text.Trim() + "';", conn_db);
-                SqlDataAdapter da = new SqlDataAdapter(cmd);
-                DataTable dt = new DataTable();
-                da.Fill(dt);
+                DataTable dt = SqlDataTable("SELECT * FROM member WHERE member_id= @member_id",
+                    new Dictionary<string, object>
+                    {
+                        { "member_id", username_input.Text.Trim() }
+                    }
+                );
 
                 if (dt.Rows.Count == 1)
                 {
@@ -59,8 +55,7 @@ namespace Sem_Proj
                 else
                 {
                     return false;
-                }
-                
+                }                
             }
             catch (Exception ex)
             {
@@ -97,6 +92,27 @@ namespace Sem_Proj
             return Convert.ToBase64String(algorithm.ComputeHash(plainTextWithSaltBytes));
         }
 
+        private static DataTable SqlDataTable(string sql, IDictionary<string, object> values)
+        {
+            using (SqlConnection conn = new SqlConnection(con))
+            using (SqlCommand cmd = conn.CreateCommand())
+            {
+                conn.Open();
+                cmd.CommandText = sql;
+                foreach (KeyValuePair<string, object> item in values)
+                {
+                    cmd.Parameters.AddWithValue("@" + item.Key, item.Value);
+                }
+
+                DataTable table = new DataTable();
+                using (var reader = cmd.ExecuteReader())
+                {
+                    table.Load(reader);
+                    return table;
+                }
+            }
+        }
+
         private void SignUp() 
         {            
             try
@@ -120,14 +136,14 @@ namespace Sem_Proj
                 cmd.Parameters.AddWithValue("@full_address", address_input.Text.Trim());
                 cmd.Parameters.AddWithValue("@member_id", username_input.Text.Trim());
 
-                string password = password_input.Text.Trim();
+                string password = password_input_registration.Text.Trim();
                 string salt = GenerateSalt();
                 string hash = GenerateSaltedHash(password, salt);
 
                 cmd.Parameters.AddWithValue("@salt", salt);
                 cmd.Parameters.AddWithValue("@hash", hash);
-                cmd.Parameters.AddWithValue("@account_status", "active");
-                cmd.Parameters.AddWithValue("@account_privilege", "admin");
+                cmd.Parameters.AddWithValue("@account_status", "pending");
+                cmd.Parameters.AddWithValue("@account_privilege", "member");
 
                 cmd.ExecuteNonQuery();
                 conn_db.Close();

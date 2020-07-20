@@ -5,25 +5,10 @@
             <div class="card">
                 <div class="card-body">
 
-                    <div class="container">
+                    <div class="container mb-4" id="CommentBox" runat="server">
 
                         <div class="row">
                             <h5>Have questions or suggestions? Leave a comment!</h5>
-                        </div>
-
-                        <div class="row">
-                            <div class="col-md-4 form-group">
-                                <label>Name</label>
-                                <asp:TextBox CssClass="form-control" ID="TextBox1" runat="server"></asp:TextBox>
-                            </div>
-                            <div class="col-md-4 form-group">
-                                <label>Email</label>
-                                <asp:TextBox CssClass="form-control" ID="TextBox5" runat="server" type="email"></asp:TextBox>
-                            </div>
-                            <div class="col-md-4 form-group">
-                                <label>Phone Number</label>
-                                <asp:TextBox CssClass="form-control" ID="TextBox6" runat="server" type="tel"></asp:TextBox>
-                            </div>
                         </div>
 
                         <div class="row">
@@ -34,7 +19,7 @@
                         </div>
                     </div>
 
-                    <div class="container mt-4">
+                    <div class="container">
                         <div class="row">
                             <h5>Contact Us</h5>
                         </div>
@@ -47,12 +32,20 @@
 
                         <div class="row">
                             <div class="col-6">
-                                <label>Contact Number:</label>
-                                <a class="btn btn-link" id="footer_btn_4" href="tel: +(60) 183231959"><i class="fas fa-phone"></i> +(60) 183231959</a><br />
+                                <div class="col">
+                                    <label>Contact Number:</label>
+                                </div>
+                                <div class="col">
+                                    <a class="btn btn-link" id="footer_btn_4" href="tel: +(60) 183231959"><i class="fas fa-phone"></i> +(60) 183231959</a><br />
+                                </div>
                             </div>
                             <div class="col-6">
-                                <label>Email Address:</label>
-                                <a class="btn btn-link" id="footer_btn_5" href="mailto: maplewong1998@gmail.com"><i class="fas fa-envelope"></i> maplewong1998@gmail.com</a>
+                                <div class="col">
+                                    <label>Email Address:</label>
+                                </div>
+                                <div class="col">
+                                    <a class="btn btn-link" id="footer_btn_5" href="mailto: maplewong1998@gmail.com"><i class="fas fa-envelope"></i> maplewong1998@gmail.com</a>
+                                </div>                                
                             </div>                                
                         </div>
 
