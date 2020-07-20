@@ -68,7 +68,7 @@ namespace Sem_Proj
         {
             try
             {
-                DataTable dt = SqlDataTable("SELECT * FROM book WHERE book_id= @book_id",
+                DataTable dt = SqlDataTable("SELECT * FROM book WHERE book_id = @book_id",
                     new Dictionary<string, object>
                     {
                         { "book_id", isbn_input.Text.Trim() }
