@@ -24,6 +24,15 @@ namespace Sem_Proj
         protected global::System.Web.UI.WebControls.FileUpload image_uploader;
 
         /// <summary>
+        /// RequiredFieldValidator1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidator1;
+
+        /// <summary>
         /// isbn_input control.
         /// </summary>
         /// <remarks>
@@ -33,13 +42,13 @@ namespace Sem_Proj
         protected global::System.Web.UI.WebControls.TextBox isbn_input;
 
         /// <summary>
-        /// LinkButton4 control.
+        /// findbook_btn control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.LinkButton LinkButton4;
+        protected global::System.Web.UI.WebControls.LinkButton findbook_btn;
 
         /// <summary>
         /// bookname_input control.
@@ -132,13 +141,13 @@ namespace Sem_Proj
         protected global::System.Web.UI.WebControls.TextBox actualstock_input;
 
         /// <summary>
-        /// currentstock_input control.
+        /// currentstock_show control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox currentstock_input;
+        protected global::System.Web.UI.WebControls.TextBox currentstock_show;
 
         /// <summary>
         /// issuedbook_show control.

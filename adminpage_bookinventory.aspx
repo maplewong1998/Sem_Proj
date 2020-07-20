@@ -33,11 +33,11 @@
 
                                 <div class="row">
                                     <div class="col-4">
-                                        <label>ISBN-13</label>
+                                        <label>ISBN-13</label>&nbsp<asp:RequiredFieldValidator CssClass="text-danger" ID="RequiredFieldValidator1" runat="server" ErrorMessage="*Required" ControlToValidate="isbn_input"></asp:RequiredFieldValidator>
                                         <div class="form-group input-group">
                                             <asp:TextBox CssClass="form-control" ID="isbn_input" runat="server"></asp:TextBox>
                                             <div class="input-group-append">                                                
-                                                <asp:LinkButton class="btn btn-primary" ID="LinkButton4" runat="server"><i class="fas fa-search"></i></asp:LinkButton>
+                                                <asp:LinkButton class="btn btn-primary" ID="findbook_btn" runat="server" OnClick="findbook_btn_Click"><i class="fas fa-search"></i></asp:LinkButton>
                                             </div>
                                         </div>
                                     </div>
@@ -145,7 +145,7 @@
                                     <div class="col-4">
                                         <label>Current Stock</label>
                                         <div class="form-group">
-                                            <asp:TextBox CssClass="form-control" ID="currentstock_input" runat="server" TextMode="Number" ReadOnly="true"></asp:TextBox>
+                                            <asp:TextBox CssClass="form-control" ID="currentstock_show" runat="server" TextMode="Number" ReadOnly="true"></asp:TextBox>
                                         </div>
                                     </div>
                                     <div class="col-4">
@@ -168,10 +168,10 @@
                                         <asp:Button ID="addbtn" class="btn btn-block btn-success" runat="server" Text="Add" OnClick="addbtn_Click"/>
                                     </div>
                                     <div class="col-4">
-                                        <asp:Button ID="updatebtn" class="btn btn-block btn-warning" runat="server" Text="Update" />
+                                        <asp:Button ID="updatebtn" class="btn btn-block btn-warning" runat="server" Text="Update" OnClick="updatebtn_Click" />
                                     </div>
                                     <div class="col-4">
-                                        <asp:Button ID="deletebtn" class="btn btn-block btn-danger" runat="server" Text="Delete" />
+                                        <asp:Button ID="deletebtn" class="btn btn-block btn-danger" runat="server" Text="Delete" OnClick="deletebtn_Click" />
                                     </div>
                                 </div>
                             </div>
@@ -196,9 +196,9 @@
 
                                 <div class="row">
                                     <div class="col-12">
-                                        <asp:GridView class="table" ID="book_list" runat="server" AutoGenerateColumns="False" DataKeyNames="book_id" DataSourceID="SqlDataSource1">
+                                        <asp:GridView ID="book_list" runat="server" AutoGenerateColumns="False" DataKeyNames="book_id" DataSourceID="SqlDataSource1" ShowHeader="False">
                                             <Columns>
-                                                <asp:TemplateField ShowHeader="false">
+                                                <asp:TemplateField>
                                                     <ItemTemplate>
                                                         <div class="container-fluid">
                                                             <div class="row">
@@ -245,8 +245,8 @@
                                                                             <asp:Label ID="cost" runat="server" Text='<%# Eval("book_cost") %>'></asp:Label>
                                                                             &nbsp;| Actual Stock -
                                                                             <asp:Label ID="actual_stock" runat="server" Text='<%# Eval("actual_stock") %>'></asp:Label>
-                                                                            &nbsp;| Available -
-                                                                            <asp:Label ID="available_stock" runat="server" Text='<%# Eval("current_stock") %>'></asp:Label>
+                                                                            &nbsp;| Issued -
+                                                                            <asp:Label ID="issued_books" runat="server" Text='<%# Eval("issued_books") %>'></asp:Label>
                                                                         </div>
                                                                     </div>
                                                                     <div class="row">
@@ -263,7 +263,6 @@
                                                         </div>
                                                     </ItemTemplate>
                                                 </asp:TemplateField>
-
                                             </Columns>
                                         </asp:GridView>
                                         <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:elibraryDBConnectionString %>" SelectCommand="SELECT * FROM [book]"></asp:SqlDataSource>
