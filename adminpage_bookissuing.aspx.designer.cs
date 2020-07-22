@@ -42,22 +42,31 @@ namespace Sem_Proj
         protected global::System.Web.UI.WebControls.LinkButton issueid_btn;
 
         /// <summary>
-        /// RequiredFieldValidator1 control.
+        /// status_v control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidator1;
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator status_v;
 
         /// <summary>
-        /// TextBox1 control.
+        /// status control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBox1;
+        protected global::System.Web.UI.WebControls.TextBox status;
+
+        /// <summary>
+        /// active_btn control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.LinkButton active_btn;
 
         /// <summary>
         /// returned_btn control.
@@ -67,15 +76,6 @@ namespace Sem_Proj
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.LinkButton returned_btn;
-
-        /// <summary>
-        /// returneddue_btn control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.LinkButton returneddue_btn;
 
         /// <summary>
         /// due_btn control.
