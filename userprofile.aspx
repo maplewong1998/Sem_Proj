@@ -21,7 +21,7 @@
 
                             <div class="row">
                                 <div class="col-12 d-flex justify-content-center">
-                                    <span>Account Status -</span>&nbsp<asp:Label CssClass="badge badge-pill badge-info" ID="account_status" runat="server" Text="account status"></asp:Label>
+                                    <span>Account Status -</span>&nbsp<asp:Label class="badge badge-pill badge-info" ID="account_status" runat="server" Text="account status"></asp:Label>
                                 </div>
                             </div>
 
@@ -131,7 +131,7 @@
 
                             <div class="row">
                                 <div class="col-6 form-group mx-auto">
-                                    <asp:Button CssClass="btn btn-block btn-primary" ID="update_profile_btn" runat="server" Text="Update" />
+                                    <asp:Button CssClass="btn btn-block btn-primary" ID="update_profile_btn" runat="server" Text="Update" OnClick="update_profile_btn_Click" />
                                 </div>
                             </div>
                         </div>
@@ -149,12 +149,6 @@
 
                             <div class="row">
                                 <div class="col-12 d-flex justify-content-center">
-                                    <asp:Label CssClass="badge badge-pill badge-info mt-3" ID="Label1" runat="server" Text="borrow status"></asp:Label>
-                                </div>
-                            </div>
-
-                            <div class="row">
-                                <div class="col-12 d-flex justify-content-center">
                                     <h3>Borrow History</h3><br />
                                 </div>
                             </div>
@@ -167,7 +161,7 @@
 
                             <div class="row">
                                 <div class="col">
-                                    <asp:GridView class="table table-bordered" ID="borrow_history" runat="server" AutoGenerateColumns="False" DataKeyNames="issue_id" DataSourceID="SqlDataSource1">
+                                    <asp:GridView class="table table-bordered" ID="borrow_history" runat="server" AutoGenerateColumns="False" DataKeyNames="issue_id" DataSourceID="SqlDataSource1" OnRowDataBound="BorrowHistory_RowDataBound">
                                         <Columns>
                                             <asp:BoundField DataField="issue_id" HeaderText="Issue ID" ReadOnly="True" SortExpression="issue_id" />
                                             <asp:BoundField DataField="book_id" HeaderText="Book ID" SortExpression="book_id" />

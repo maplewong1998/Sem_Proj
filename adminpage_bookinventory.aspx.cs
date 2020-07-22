@@ -86,7 +86,7 @@ namespace Sem_Proj
             }
             catch (Exception ex)
             {
-                Response.Write("<script>alert('" + ex.Message + "');</script>");
+                
                 throw ex;
             }
         }
@@ -223,7 +223,7 @@ namespace Sem_Proj
             }
             catch (Exception ex)
             {
-                Response.Write("<script>alert('" + ex.Message + "');</script>");
+                
                 throw ex;
             }
         }
@@ -268,7 +268,7 @@ namespace Sem_Proj
             }
             catch (Exception ex)
             {
-                Response.Write("<script>alert('" + ex.Message + "');</script>");
+                
                 throw ex;
             }
         }
@@ -289,7 +289,7 @@ namespace Sem_Proj
             }
             catch (Exception ex)
             {
-                Response.Write("<script>alert('" + ex.Message + "');</script>");
+                
                 throw ex;
             }
         }

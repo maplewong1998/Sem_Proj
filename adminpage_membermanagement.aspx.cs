@@ -35,7 +35,7 @@ namespace Sem_Proj
             {
                 if (getMemberByID() == true)
                 {
-                    setMemberActive();
+                    setMemberStatus("active");
                 }
             }
         }
@@ -47,7 +47,7 @@ namespace Sem_Proj
             {
                 if (getMemberByID() == true)
                 {
-                    setMemberPending();
+                    setMemberStatus("pending");
                 }
             }
         }
@@ -59,7 +59,7 @@ namespace Sem_Proj
             {
                 if (getMemberByID() == true)
                 {
-                    setMemberSuspended();
+                    setMemberStatus("suspended");
                 }
             } 
         }
@@ -134,19 +134,18 @@ namespace Sem_Proj
             }
             catch (Exception ex)
             {
-                Response.Write("<script>alert('" + ex.Message + "');</script>");
                 throw ex;
             }
         }
 
-        private void setMemberActive()
+        private void setMemberStatus(string status)
         {
             try
             {
                 DataTable dt = SqlDataTable("UPDATE member SET account_status = @account_status WHERE member_id = @member_id AND account_privilege = @account_privilege",
                     new Dictionary<string, object>
                     {
-                        { "account_status", "active" },
+                        { "account_status", status },
                         { "member_id", memberid_input.Text.Trim() },
                         { "account_privilege", "member" }
                     }
@@ -158,55 +157,7 @@ namespace Sem_Proj
             }
             catch (Exception ex)
             {
-                Response.Write("<script>alert('" + ex.Message + "');</script>");
-                throw ex;
-            }
-        }
-
-        private void setMemberPending()
-        {
-            try
-            {
-                DataTable dt = SqlDataTable("UPDATE member SET account_status = @account_status WHERE member_id = @member_id AND account_privilege = @account_privilege",
-                    new Dictionary<string, object>
-                    {
-                        { "account_status", "pending" },
-                        { "member_id", memberid_input.Text.Trim() },
-                        { "account_privilege", "member" }
-                    }
-                );
-
-                getMemberByID();
-                member_list.DataBind();
-
-            }
-            catch (Exception ex)
-            {
-                Response.Write("<script>alert('" + ex.Message + "');</script>");
-                throw ex;
-            }
-        }
-
-        private void setMemberSuspended()
-        {
-            try
-            {
-                DataTable dt = SqlDataTable("UPDATE member SET account_status = @account_status WHERE member_id = @member_id AND account_privilege = @account_privilege",
-                    new Dictionary<string, object>
-                    {
-                        { "account_status", "suspended" },
-                        { "member_id", memberid_input.Text.Trim() },
-                        { "account_privilege", "member" }
-                    }
-                );
-
-                getMemberByID();
-                member_list.DataBind();
-
-            }
-            catch (Exception ex)
-            {
-                Response.Write("<script>alert('" + ex.Message + "');</script>");
+                
                 throw ex;
             }
         }
@@ -228,7 +179,7 @@ namespace Sem_Proj
             }
             catch (Exception ex)
             {
-                Response.Write("<script>alert('" + ex.Message + "');</script>");
+                
                 throw ex;
             }
         }
