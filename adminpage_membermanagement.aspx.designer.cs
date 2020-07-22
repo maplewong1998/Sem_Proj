@@ -15,6 +15,15 @@ namespace Sem_Proj
     {
 
         /// <summary>
+        /// memberid_input_v control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator memberid_input_v;
+
+        /// <summary>
         /// memberid_input control.
         /// </summary>
         /// <remarks>

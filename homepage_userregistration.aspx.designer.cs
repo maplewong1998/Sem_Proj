@@ -15,6 +15,15 @@ namespace Sem_Proj
     {
 
         /// <summary>
+        /// name_input_v control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator name_input_v;
+
+        /// <summary>
         /// name_input control.
         /// </summary>
         /// <remarks>
@@ -24,13 +33,13 @@ namespace Sem_Proj
         protected global::System.Web.UI.WebControls.TextBox name_input;
 
         /// <summary>
-        /// RequiredFieldValidator1 control.
+        /// birthdate_input_v control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidator1;
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator birthdate_input_v;
 
         /// <summary>
         /// birthdate_input control.
@@ -42,13 +51,13 @@ namespace Sem_Proj
         protected global::System.Web.UI.WebControls.TextBox birthdate_input;
 
         /// <summary>
-        /// RequiredFieldValidator2 control.
+        /// phone_input_v control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidator2;
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator phone_input_v;
 
         /// <summary>
         /// phone_input control.
@@ -60,13 +69,13 @@ namespace Sem_Proj
         protected global::System.Web.UI.WebControls.TextBox phone_input;
 
         /// <summary>
-        /// RequiredFieldValidator3 control.
+        /// email_input_v control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidator3;
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator email_input_v;
 
         /// <summary>
         /// email_input control.
@@ -78,13 +87,13 @@ namespace Sem_Proj
         protected global::System.Web.UI.WebControls.TextBox email_input;
 
         /// <summary>
-        /// RequiredFieldValidator4 control.
+        /// state_input_v control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidator4;
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator state_input_v;
 
         /// <summary>
         /// state_input control.
@@ -96,13 +105,13 @@ namespace Sem_Proj
         protected global::System.Web.UI.WebControls.TextBox state_input;
 
         /// <summary>
-        /// RequiredFieldValidator5 control.
+        /// city_input_v control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidator5;
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator city_input_v;
 
         /// <summary>
         /// city_input control.
@@ -114,13 +123,13 @@ namespace Sem_Proj
         protected global::System.Web.UI.WebControls.TextBox city_input;
 
         /// <summary>
-        /// RequiredFieldValidator6 control.
+        /// postnumber_input_v control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidator6;
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator postnumber_input_v;
 
         /// <summary>
         /// postnumber_input control.
@@ -132,13 +141,13 @@ namespace Sem_Proj
         protected global::System.Web.UI.WebControls.TextBox postnumber_input;
 
         /// <summary>
-        /// RequiredFieldValidator7 control.
+        /// address_input_v control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidator7;
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator address_input_v;
 
         /// <summary>
         /// address_input control.
@@ -150,13 +159,13 @@ namespace Sem_Proj
         protected global::System.Web.UI.WebControls.TextBox address_input;
 
         /// <summary>
-        /// RequiredFieldValidator8 control.
+        /// username_input_v control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidator8;
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator username_input_v;
 
         /// <summary>
         /// username_input control.
@@ -168,13 +177,13 @@ namespace Sem_Proj
         protected global::System.Web.UI.WebControls.TextBox username_input;
 
         /// <summary>
-        /// RequiredFieldValidator9 control.
+        /// password_input_registration_v control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidator9;
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator password_input_registration_v;
 
         /// <summary>
         /// password_input_registration control.
@@ -184,15 +193,6 @@ namespace Sem_Proj
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox password_input_registration;
-
-        /// <summary>
-        /// RequiredFieldValidator10 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidator10;
 
         /// <summary>
         /// sign_up_btn control.

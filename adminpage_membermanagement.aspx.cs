@@ -21,27 +21,59 @@ namespace Sem_Proj
 
         protected void search_btn_Click(object sender, EventArgs e)
         {
-            getMemberByID();
+            memberid_input_v.Validate();
+            if (memberid_input_v.IsValid)
+            {
+                getMemberByID();
+            }
         }
 
         protected void active_btn_Click(object sender, EventArgs e)
         {
-            setMemberActive();
+            memberid_input_v.Validate();
+            if (memberid_input_v.IsValid)
+            {
+                if (getMemberByID() == true)
+                {
+                    setMemberActive();
+                }
+            }
         }
 
         protected void pending_btn_Click(object sender, EventArgs e)
         {
-            setMemberPending();
+            memberid_input_v.Validate();
+            if (memberid_input_v.IsValid)
+            {
+                if (getMemberByID() == true)
+                {
+                    setMemberPending();
+                }
+            }
         }
 
         protected void suspend_btn_Click(object sender, EventArgs e)
         {
-            setMemberSuspended();
+            memberid_input_v.Validate();
+            if (memberid_input_v.IsValid)
+            {
+                if (getMemberByID() == true)
+                {
+                    setMemberSuspended();
+                }
+            } 
         }
 
         protected void delete_user_btn_Click(object sender, EventArgs e)
         {
-            deleteUser();
+            memberid_input_v.Validate();
+            if (memberid_input_v.IsValid)
+            {
+                if (getMemberByID() == true)
+                {
+                    deleteUser();
+                }
+            }
         }
 
         private static DataTable SqlDataTable(string sql, IDictionary<string, object> values)
@@ -65,7 +97,7 @@ namespace Sem_Proj
             }
         }
 
-        private void getMemberByID()
+        private bool getMemberByID()
         {
             try
             {
@@ -90,11 +122,13 @@ namespace Sem_Proj
                     city_input.Text = row["city"].ToString();
                     postnumber_input.Text = row["postcode"].ToString();
                     address_input.Text = row["full_address"].ToString();
+                    return true;
 
                 }
                 else
                 {
                     Response.Write("<script>alert('User doesn't exist.');</script>");
+                    return false;
                 }
 
             }

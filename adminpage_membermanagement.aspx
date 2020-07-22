@@ -27,7 +27,7 @@
 
                             <div class="row mb-1">
                                 <div class="col-6">
-                                    Member
+                                    Member&nbsp<asp:RequiredFieldValidator ID="memberid_input_v" runat="server" ErrorMessage="*Required" ControlToValidate="memberid_input"></asp:RequiredFieldValidator>
                                 </div>
                                 <div class="col-6">
                                     Account Status

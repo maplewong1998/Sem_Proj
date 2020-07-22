@@ -26,68 +26,68 @@
 
                         <div class="row">
                             <div class="col-6">
-                                Full Name
+                                Full Name&nbsp<asp:RequiredFieldValidator CssClass="text-danger" ID="name_input_v" ControlToValidate="name_input" runat="server" ErrorMessage="*Required"></asp:RequiredFieldValidator>
                                 <div class="form-group">
                                     <asp:TextBox CssClass="form-control" ID="name_input" type="text" runat="server"></asp:TextBox>
-                                    <asp:RequiredFieldValidator CssClass="text-danger" ID="RequiredFieldValidator1" ControlToValidate="name_input" runat="server" ErrorMessage="*Field required"></asp:RequiredFieldValidator>
+
                                 </div>
                             </div>
                             <div class="col-6">
-                                Date of Birth
+                                Date of Birth&nbsp<asp:RequiredFieldValidator CssClass="text-danger" ID="birthdate_input_v" ControlToValidate="birthdate_input" runat="server" ErrorMessage="*Required"></asp:RequiredFieldValidator>
                                 <div class="form-group">
                                     <asp:TextBox CssClass="form-control" ID="birthdate_input" type="date" runat="server"></asp:TextBox>
-                                    <asp:RequiredFieldValidator CssClass="text-danger" ID="RequiredFieldValidator2" ControlToValidate="birthdate_input" runat="server" ErrorMessage="*Field required"></asp:RequiredFieldValidator>
+                                    
                                 </div>
                             </div>
                         </div>
 
                         <div class="row">
                             <div class="col-6">
-                                Contact Number
+                                Contact Number&nbsp<asp:RequiredFieldValidator CssClass="text-danger" ID="phone_input_v" ControlToValidate="phone_input" runat="server" ErrorMessage="*Required"></asp:RequiredFieldValidator>
                                 <div class="form-group">
                                     <asp:TextBox CssClass="form-control" ID="phone_input" type="tel" runat="server"></asp:TextBox>
-                                    <asp:RequiredFieldValidator CssClass="text-danger" ID="RequiredFieldValidator3" ControlToValidate="phone_input" runat="server" ErrorMessage="*Field required"></asp:RequiredFieldValidator>
+                                    
                                 </div>
                             </div>
                             <div class="col-6">
-                                Email Address
+                                Email Address&nbsp<asp:RequiredFieldValidator CssClass="text-danger" ID="email_input_v" ControlToValidate="email_input" runat="server" ErrorMessage="*Required"></asp:RequiredFieldValidator>
                                 <div class="form-group">
                                     <asp:TextBox CssClass="form-control" ID="email_input" type="email" runat="server"></asp:TextBox>
-                                    <asp:RequiredFieldValidator CssClass="text-danger" ID="RequiredFieldValidator4" ControlToValidate="email_input" runat="server" ErrorMessage="*Field required"></asp:RequiredFieldValidator>
+                                    
                                 </div>
                             </div>
                         </div>
 
                         <div class="row">
                             <div class="col-4">
-                                State
-                                <div class="group">
+                                State&nbsp<asp:RequiredFieldValidator CssClass="text-danger" ID="state_input_v" ControlToValidate="state_input" runat="server" ErrorMessage="*Required"></asp:RequiredFieldValidator>
+                                <div class="form-group">
                                     <asp:TextBox CssClass="form-control" ID="state_input" type="text" runat="server"></asp:TextBox>
-                                    <asp:RequiredFieldValidator CssClass="text-danger" ID="RequiredFieldValidator5" ControlToValidate="state_input" runat="server" ErrorMessage="*Field required"></asp:RequiredFieldValidator>
+                                    
                                 </div>
                             </div>
                             <div class="col-4">
-                                City
+                                City&nbsp<asp:RequiredFieldValidator CssClass="text-danger" ID="city_input_v" ControlToValidate="city_input" runat="server" ErrorMessage="*Required"></asp:RequiredFieldValidator>
                                 <div class="form-group">
                                     <asp:TextBox CssClass="form-control" ID="city_input" type="text" runat="server"></asp:TextBox>
-                                    <asp:RequiredFieldValidator CssClass="text-danger" ID="RequiredFieldValidator6" ControlToValidate="city_input" runat="server" ErrorMessage="*Field required"></asp:RequiredFieldValidator>
+                                    
                                 </div>
                             </div>
                             <div class="col-4">
-                                Postcode
+                                Postcode&nbsp<asp:RequiredFieldValidator CssClass="text-danger" ID="postnumber_input_v" ControlToValidate="postnumber_input" runat="server" ErrorMessage="*Required"></asp:RequiredFieldValidator>
                                 <div class="form-group">
                                     <asp:TextBox CssClass="form-control" ID="postnumber_input" type="text" runat="server"></asp:TextBox>
-                                    <asp:RequiredFieldValidator CssClass="text-danger" ID="RequiredFieldValidator7" ControlToValidate="postnumber_input" runat="server" ErrorMessage="*Field required"></asp:RequiredFieldValidator>
+                                    
                                 </div>
                             </div>
                         </div>
 
                         <div class="row">
                             <div class="col-12">
-                                Address
+                                Address&nbsp<asp:RequiredFieldValidator CssClass="text-danger" ID="address_input_v" ControlToValidate="address_input" runat="server" ErrorMessage="*Required"></asp:RequiredFieldValidator>
                                 <div class="form-group">
                                     <asp:TextBox CssClass="form-control" ID="address_input" TextMode="MultiLine" type="text" Rows="3" runat="server"></asp:TextBox>
-                                    <asp:RequiredFieldValidator CssClass="text-danger" ID="RequiredFieldValidator8" ControlToValidate="address_input" runat="server" ErrorMessage="*Field required"></asp:RequiredFieldValidator>
+                                    
                                 </div>
                             </div>
                         </div>
@@ -100,17 +100,17 @@
 
                         <div class="row">
                             <div class="col-6">
-                                Username
+                                Username&nbsp<asp:RequiredFieldValidator CssClass="text-danger" ID="username_input_v" ControlToValidate="username_input" runat="server" ErrorMessage="*Required"></asp:RequiredFieldValidator>
                                 <div class="form-group">
                                     <asp:TextBox CssClass="form-control" ID="username_input" type="text" runat="server"></asp:TextBox>
-                                    <asp:RequiredFieldValidator CssClass="text-danger" ID="RequiredFieldValidator9" ControlToValidate="username_input" runat="server" ErrorMessage="*Field required"></asp:RequiredFieldValidator>
+                                    
                                 </div>
                             </div>
                             <div class="col-6">
-                                Password
+                                Password&nbsp<asp:RequiredFieldValidator CssClass="text-danger" ID="password_input_registration_v" ControlToValidate="password_input_registration" runat="server" ErrorMessage="*Required"></asp:RequiredFieldValidator>
                                 <div class="form-group">
                                     <asp:TextBox CssClass="form-control" ID="password_input_registration" type="password" runat="server"></asp:TextBox>
-                                    <asp:RequiredFieldValidator CssClass="text-danger" ID="RequiredFieldValidator10" ControlToValidate="password_input_registration" runat="server" ErrorMessage="*Field required"></asp:RequiredFieldValidator>
+                                    
                                 </div>
                             </div>
                         </div>
