@@ -121,7 +121,7 @@
 
                                 <div class="row">
                                     <div class="col">
-                                        <asp:GridView class="table table-bordered" ID="issued_book_list" runat="server" AutoGenerateColumns="False" DataKeyNames="issue_id" DataSourceID="SqlDataSource1">
+                                        <asp:GridView class="table table-bordered" ID="issued_book_list" runat="server" AutoGenerateColumns="False" DataKeyNames="issue_id" DataSourceID="SqlDataSource1" OnRowDataBound="IssuedBookList_RowDataBound">
                                             <Columns>
                                                 <asp:BoundField DataField="issue_id" HeaderText="Issue ID" ReadOnly="True" SortExpression="issue_id" />
                                                 <asp:BoundField DataField="member_id" HeaderText="Member ID" SortExpression="member_id" />

@@ -347,5 +347,31 @@ namespace Sem_Proj
                 }
             }
         }
+
+        protected void IssuedBookList_RowDataBound(object sender, GridViewRowEventArgs e)
+        {
+            try
+            {
+                string status = e.Row.Cells[5].Text;
+                if (e.Row.RowType == DataControlRowType.DataRow)
+                {
+                    if (status.Equals("active")){
+                        e.Row.BackColor = System.Drawing.Color.PaleGreen;
+                    }
+                    else if (status.Equals("returned"))
+                    {
+                        e.Row.BackColor = System.Drawing.Color.PaleGoldenrod;
+                    }
+                    else if (status.Equals("due"))
+                    {
+                        e.Row.BackColor = System.Drawing.Color.PaleVioletRed;
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
     }
 }
