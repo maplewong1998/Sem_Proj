@@ -13,7 +13,7 @@ namespace Sem_Proj
         {
             try
             {
-                if (Session["role"].Equals("") || Session["role"].Equals(null))
+                if (Session["role"].Equals(""))
                 {
                     sign_up_menu.Visible = true;
                     sign_in_menu.Visible = true;
@@ -58,7 +58,10 @@ namespace Sem_Proj
 
         protected void sign_out_menu_Click(object sender, EventArgs e)
         {
-            Session.Clear();
+            Session["username"] = "";
+            Session["fullname"] = "";
+            Session["role"] = "";
+            Session["status"] = "";
             Response.Redirect("homepage.aspx");
         }
     }
